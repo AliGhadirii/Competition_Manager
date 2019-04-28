@@ -146,6 +146,7 @@
     <ClCompile Include="badminton.cpp" />
     <ClCompile Include="datetime.cpp" />
     <ClCompile Include="football.cpp" />
+    <ClCompile Include="login.cpp" />
     <ClCompile Include="match.cpp" />
     <ClCompile Include="Organizer.cpp" />
     <ClCompile Include="pingpong.cpp" />
@@ -160,6 +161,7 @@
     <ClInclude Include="datetime.h" />
     <ClInclude Include="football.h" />
     <ClInclude Include="Header.h" />
+    <ClInclude Include="login.h" />
     <ClInclude Include="match.h" />
     <ClInclude Include="Organizer.h" />
     <ClInclude Include="pingpong.h" />

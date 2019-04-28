@@ -15,3 +15,9 @@
 #include"athlete.h"
 #include"match.h"
 #include"datetime.h"
+#include"login.h"
+enum tour_mode
+{
+	football,pingpong,badminton
+
+};
