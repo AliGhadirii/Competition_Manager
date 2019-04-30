@@ -16,7 +16,7 @@
 #include"match.h"
 #include"datetime.h"
 #include"login.h"
-enum tour_mode
+enum mode
 {
 	football,pingpong,badminton
 
