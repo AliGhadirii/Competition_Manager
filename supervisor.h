@@ -11,4 +11,3 @@ public:
 	void delete_athlete_from_team(athlete ob);
 	~supervisor();
 };
-

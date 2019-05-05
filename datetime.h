@@ -9,4 +9,3 @@ public:
 	int * show_datetime()const;
 	~datetime();
 };
-

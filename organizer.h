@@ -24,4 +24,3 @@ public:
 	mode show_mode()const;
 	~organizer();
 };
-
