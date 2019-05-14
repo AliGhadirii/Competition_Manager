@@ -6,9 +6,9 @@ class organizer
 	vector <team> teams;
 	vector <athlete> athletes;
 	login ob;
-	mode md;
+	const mode md;
 public:
-	organizer();
+	organizer(mode _md);
 	void insert_tour(tournament ob);
 	void delete_tour(tournament ob);
 	vector <tournament> show_tours();
