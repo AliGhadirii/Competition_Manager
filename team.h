@@ -16,8 +16,6 @@ public:
 	void delete_match_for_own(match ob);
 	void insert_tour_for_own(tournament ob);
 	void dalete_tour_for_own(tournament ob);
-	friend void insert_athlete_to_team(athlete ob);
-	friend void delete_athlete_from_team(athlete ob);
 	string show_name()const;
 	void edit_name();
 	vector <athlete> show_athletes()const;
