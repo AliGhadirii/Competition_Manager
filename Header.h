@@ -19,3 +19,7 @@ enum mode
 	football, pingpong, badminton
 
 };
+bool boolsort(team a, team b)
+{
+	return a.show_score() > b.show_score();
+}
