@@ -3,7 +3,7 @@ tournament::tournament() : md()
 {
 
 }
-tournament::tournament(string _name, mode _md, datetime _startdt, datetime _enddt) :md(_md)
+tournament::tournament(string _name, mode _md, datetime _startdt, datetime _enddt) : md(_md)
 {
 	name = _name;
 	startdt = _startdt;
@@ -17,11 +17,11 @@ void tournament::insert_match(match ob)
 }
 void tournament::delete_match(match ob)
 {
-	matches.erase(find(matches.begin() , matches.end() , ob ));
+	matches.erase(find(matches.begin(), matches.end(), ob));
 	ob.show_team1().delete_match_for_own(ob);
 	ob.show_team2().delete_match_for_own(ob);
 }
-void tournament::edit_match(match first , match ob)
+void tournament::edit_match(match first, match ob)
 {
 	replace(matches.begin(), matches.end(), first, ob);
 }
@@ -32,7 +32,7 @@ void tournament::insert_team(team ob)
 }
 void tournament::delete_team(team ob)
 {
-	teams.erase(find(teams.begin() , teams.end() , ob ));
+	teams.erase(find(teams.begin(), teams.end(), ob));
 	ob.delete_tour_for_own(*this);
 }
 void tournament::edit_team(team first, team ob)
@@ -72,7 +72,7 @@ datetime tournament::show_enddt() const
 }
 void tournament::sort_teams()
 {
-	sort(teams.begin(), teams.end() , boolsort);
+	sort(teams.begin(), teams.end(), boolsort);
 }
 string tournament::show_name()const
 {

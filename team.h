@@ -7,20 +7,19 @@ class team
 	vector <match> matches;
 	vector <tournament> tournaments;
 	int score, win, draw, loss, gf, ga, gd;
-	supervisor team_super;
+	supervisor super;
 	const mode md;
 public:
 	team();
-	team(string _name, mode _md, supervisor _team_super);// set gf,... yadad nare!
-	void edit_name(string _name);
+	team(string _name, mode _md, supervisor _super);// set gf,... yadad nare!
 	void insert_match_for_own(match ob);
 	void delete_match_for_own(match ob);
 	void insert_tour_for_own(tournament ob);
 	void delete_tour_for_own(tournament ob);
-	friend void insert_athlete_to_team(athlete ob);
-	friend void delete_athlete_from_team(athlete ob);
+	//friend void insert_athlete_to_team(athlete ob);
+	//friend void delete_athlete_from_team(athlete ob);
 	string show_name()const;
-	void edit_name();
+	void edit_name(string _name);
 	vector <athlete> show_athletes()const;
 	vector <match> show_matches()const;
 	vector <tournament> show_toures()const;
