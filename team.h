@@ -10,6 +10,7 @@ class team
 	supervisor team_super;
 	const mode md;
 public:
+	team();
 	team(string _name, mode _md, supervisor _team_super);// set gf,... yadad nare!
 	void edit_name(string _name);
 	void insert_match_for_own(match ob);

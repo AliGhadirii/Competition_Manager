@@ -1,8 +1,11 @@
 #include "tournament.h"
-tournament::tournament(string _name, mode _md, datetime _startdt, datetime _enddt)
+tournament::tournament() : md()
+{
+
+}
+tournament::tournament(string _name, mode _md, datetime _startdt, datetime _enddt) :md(_md)
 {
 	name = _name;
-	md = _md;
 	startdt = _startdt;
 	enddt = _enddt;
 }
@@ -14,13 +17,13 @@ void tournament::insert_match(match ob)
 }
 void tournament::delete_match(match ob)
 {
-	matches.erase(ob);
+	matches.erase(find(matches.begin() , matches.end() , ob ));
 	ob.show_team1().delete_match_for_own(ob);
 	ob.show_team2().delete_match_for_own(ob);
 }
-void tournament::edit_match(match ob,match first)
+void tournament::edit_match(match first , match ob)
 {
-	matches.emplace(find(matches.begin(), matches.end(), first), ob);
+	replace(matches.begin(), matches.end(), first, ob);
 }
 void tournament::insert_team(team ob)
 {
@@ -29,12 +32,12 @@ void tournament::insert_team(team ob)
 }
 void tournament::delete_team(team ob)
 {
-	teams.erase(ob);
+	teams.erase(find(teams.begin() , teams.end() , ob ));
 	ob.delete_tour_for_own(*this);
 }
-void tournament::edit_team(team ob, team first)
+void tournament::edit_team(team first, team ob)
 {
-	teams.emplace(find(teams.begin(), teams.end(), first), ob);
+	replace(teams.begin(), teams.end(), first, ob);
 	first.delete_tour_for_own(*this);
 	ob.insert_tour_for_own(*this);
 }
@@ -69,7 +72,7 @@ datetime tournament::show_enddt() const
 }
 void tournament::sort_teams()
 {
-	sort(teams.begin(), teams.end(), sdf);
+	sort(teams.begin(), teams.end() , boolsort);
 }
 string tournament::show_name()const
 {
@@ -78,10 +81,6 @@ string tournament::show_name()const
 mode tournament::show_mode()const
 {
 	return md;
-}
-bool sdf(team a, team b)
-{
-	return a.show_score() > b.show_score();
 }
 tournament::~tournament()
 {

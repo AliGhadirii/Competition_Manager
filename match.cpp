@@ -1,11 +1,14 @@
 #include "match.h"
-match::match(team _team1, team _team2, datetime _startdt, datetime _enddt, mode _md)
+match::match() : md()
+{
+
+}
+match::match(team _team1, team _team2, datetime _startdt, datetime _enddt, mode _md) : md(_md)
 {
 	team1 = _team1;
 	team2 = _team2;
 	startdt = _startdt;
 	enddt = _enddt;
-	md = _md;
 	status = -1;
 }
 void match::edit_status(int _status)
@@ -47,14 +50,14 @@ int match::show_status()const
 }
 int* match::show_scores()const
 {
-	int scores[2] = { score1,score2 };
+	int scores[2] = { score1, score2 };
 	return scores;
 }
 mode match::show_mode()const
 {
 	return md;
 }
-~match()
+match::~match()
 {
 
 }

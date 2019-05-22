@@ -9,7 +9,8 @@ class match
 	int status;
 	const mode md;
 public:
-	match(team _team1, team _team2, datetime _startdt, datetime _enddt , mode _md);//status ro -1 kon
+	match();
+	match(team _team1, team _team2, datetime _startdt, datetime _enddt, mode _md);//status ro -1 kon
 	void edit_status(int _status);
 	void edit_scores(int _score1, int _score2);
 	void edit_startdt(datetime _startdt);

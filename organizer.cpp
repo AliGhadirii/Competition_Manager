@@ -1,7 +1,11 @@
 #include "organizer.h"
-organizer::organizer(mode _md)
+organizer::organizer() : md()
 {
-	md = _md;
+
+}
+organizer::organizer(mode _md) : md(_md)
+{
+
 }
 void organizer::insert_tour(tournament ob)
 {
@@ -9,7 +13,7 @@ void organizer::insert_tour(tournament ob)
 }
 void organizer::delete_tour(tournament ob)
 {
-	tournaments.erase(ob);
+	tournaments.erase(find(tournaments.begin() , tournaments.end() , ob));
 }
 vector <tournament> organizer::show_tours()
 {

@@ -6,8 +6,9 @@ class athlete
 	login ob;
 	const mode md;
 public:
+	athlete();
 	athlete(string _name, mode _md);
-	void insert_athlete(athlete ob);
+	void insert_athlete();
 	void delete_athlete(athlete ob);
 	void insert_team(team ob); //ob super ham bezas etelaat in yaroo ro beriz to etelaat super!
 	//yaroo ro be athleta (team) azafe kon
