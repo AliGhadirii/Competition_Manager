@@ -1,5 +1,10 @@
 #include "login.h"
 
+login::login()
+{
+	username = "username";
+	password = "password";
+}
 login::login(string _username, string _password)
 {
 	username = _username;
