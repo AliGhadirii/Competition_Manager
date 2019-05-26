@@ -5,6 +5,7 @@ using namespace std;
 #include<algorithm>
 #include<iomanip>
 #include<ctime>
+#include<time.h>
 #include"tournament.h"
 #include"organizer.h"
 #include"supervisor.h"
