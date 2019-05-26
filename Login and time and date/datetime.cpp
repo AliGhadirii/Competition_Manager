@@ -1,13 +1,19 @@
 #include"datetime.h"
 
+datetime::datetime()
+{
+	td[0]= 1900;
+	td[1]=1;td[2]=1;
+	td[3]= 0;td[4]=0;td[5]=0;
+}
 datetime::datetime(int y,int m,int d,int h,int mi,int s)
 {
-	year = y;
-	month = m;
-	day = d;
-	hour = h;
-	min = mi;
-	sec = s;
+	td[0] = y;
+	td[1] = m;
+	td[2] = d;
+	td[3] = h;
+	td[4] = mi;
+	td[5] = s;
 	getNewTimeDate();
 	
 }
@@ -17,51 +23,46 @@ datetime::~datetime()
 		tdNow[i]=0;
 }
 
-datetime::edit_datetime(int _year, int _month, int _day, int _hour, int _minute, int _second)
+void datetime::edit_datetime(int _year, int _month, int _day, int _hour, int _minute, int _second)
 {
-	year = _year;
-	month = _month;
-	day = _day;
-	hour = _hour;
-	min = _minute;
-	sec = _second;
+	td[0] = _year;
+	td[1] = _month;
+	td[2] = _day;
+	td[3] = _hour;
+	td[4] = _minute;
+	td[5] = _second;
 }
 
-void datetime::show_datetime(int *time)
+int * datetime::show_datetime()
 {
-	time[0]=year;
-	time[1]=month;
-	time[2]=day;
-	time[3]=hour;
-	time[4]=min;
-	time[5]=sec;
+	return td;
 }
 
-void datetime::diff_to_now(int *tddif)
+int * datetime::diff_to_now()
 {
 	getNewTimeDate();
 			
 	// Seconds
-	if(tdNow[5]<sec)
+	if(tdNow[5]<td[5])
 	{
 		tdNow[4]--;
 		tdNow[5] += 60;
 	}
-	tddif[5] = tdNow[5]-sec;
+	tddif[5] = tdNow[5]-td[5];
 	//Minutes
-	if(tdNow[4]<min)
+	if(tdNow[4]<td[4])
 	{
 		tdNow[3]--;
 		tdNow[4] += 60;
 	}
-	tddif[4] = tdNow[4]-min;
+	tddif[4] = tdNow[4]-td[4];
 	//Hours
-	if(tdNow[3]<hour)
+	if(tdNow[3]<td[3])
 	{
 		tdNow[2]--;
 		tdNow[3] += 24;
 	}
-	tddif[3] = tdNow[3]-hour;
+	tddif[3] = tdNow[3]-td[3];
 			
 	//check for days in a month
 	int daylimit ;
@@ -88,21 +89,23 @@ void datetime::diff_to_now(int *tddif)
 			daylimit = 30;	
 	}
 	//Days
-	if(tdNow[2]<day)
+	if(tdNow[2]<td[2])
 	{
 		tdNow[1]--;
 		tdNow[2] += daylimit;
 	}
-	tddif[2] = tdNow[2]-day;	
+	tddif[2] = tdNow[2]-td[2];	
 	//Month
-	if(tdNow[1]<month)
+	if(tdNow[1]<td[1])
 	{
 		tdNow[0]--;
 		tdNow[1] += 12;
 	}
-	tddif[1] = tdNow[1]-month;
+	tddif[1] = tdNow[1]-td[1];
 	//Year
-	tddif[0] = tdNow[0]-year;
+	tddif[0] = tdNow[0]-td[0];
+	
+	return tddif;
 }
 
 void datetime::getNewTimeDate()
