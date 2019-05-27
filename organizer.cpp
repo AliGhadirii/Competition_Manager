@@ -23,8 +23,9 @@ void organizer::sort_teams()
 {
 	sort(teams.begin(), teams.end(), boolsort);
 }
-vector <team> organizer::show_teams() const
+vector <team> organizer::show_teams()
 {
+	sort_teams();
 	return teams;
 }
 vector <athlete> organizer::show_athletes() const

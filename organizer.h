@@ -21,7 +21,7 @@ public:
 	friend void delete_athlete(athlete ob);
 	friend void delete_team(team ob);*/
 	void sort_teams();
-	vector <team> show_teams() const;
+	vector <team> show_teams();
 	vector <athlete> show_athletes() const;
 	vector <supervisor> show_supervisors()const;
 	login show_login()const;

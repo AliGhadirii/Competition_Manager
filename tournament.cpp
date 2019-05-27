@@ -57,7 +57,7 @@ vector <match> tournament::show_matches() const
 {
 	return matches;
 }
-vector <team> tournament::show_teams() const
+vector <team> tournament::show_teams()
 {
 	sort_teams();
 	return teams;

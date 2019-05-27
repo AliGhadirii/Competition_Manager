@@ -21,7 +21,7 @@ public:
 	void edit_enddt(datetime ob);
 	void edit_name(string _name);
 	vector <match> show_matches() const;
-	vector <team> show_teams() const;
+	vector <team> show_teams();
 	datetime show_startdt() const;
 	datetime show_enddt() const;
 	void sort_teams();
