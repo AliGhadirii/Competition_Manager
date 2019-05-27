@@ -1,7 +1,6 @@
 #include "login.h"
 login::login()
 {
-
 }
 login::login(string _username, string _password)
 {

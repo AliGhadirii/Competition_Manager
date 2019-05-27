@@ -48,10 +48,13 @@ int match::show_status()const
 {
 	return status;
 }
-int* match::show_scores()const
+int match::show_score1()const
 {
-	int scores[2] = { score1, score2 };
-	return scores;
+	return score1;
+}
+int match::show_score2()const
+{
+	return score2;
 }
 mode match::show_mode()const
 {

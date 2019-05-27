@@ -20,7 +20,8 @@ public:
 	datetime show_startdt() const;
 	datetime show_enddt() const;
 	int show_status()const;
-	int* show_scores()const;
+	int show_score1()const;
+	int show_score2()const;
 	mode show_mode()const;
 	~match();
 };
