@@ -10,6 +10,8 @@ public:
 	void delete_team_from_tour(tournament ob1 , team ob2); //hamon hamishegi anjam bede (coment to tournament)!
 	void insert_athlete_to_team(team ob1 , athlete ob2);
 	void delete_athlete_from_team(team ob1 , athlete ob2);
+	void insert_team_to_athlete(athlete ob1 , team ob2);
+	void delete_team_from_athlete(athlete ob1 , team ob2);
 	void delete_team(organizer ob1 , team ob2);
 	~supervisor();
 };
