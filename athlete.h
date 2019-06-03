@@ -17,7 +17,7 @@ public:
 	//yaroo ro be athleta (team) azafe kon
 	void insert_team_for_own(team ob);
 	void delete_team_from_own(team ob);
-	vector <team> show_teams();
+	vector <team> show_teams()const;
 	void edit_name(string _name);
 	login show_login()const;
 	string show_name()const;
