@@ -23,6 +23,7 @@ void athlete::insert_team(organizer ob)
 	string name;
 	team t(name, this->md, super);
 	super.insert_athlete_to_team(t , *this);
+	super.insert_team_to_athlete(*this , t);
 	ob.show_teams().push_back(t);
 }
 void athlete::insert_team_for_own(team ob)
