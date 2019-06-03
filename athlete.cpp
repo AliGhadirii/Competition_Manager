@@ -25,6 +25,18 @@ void athlete::insert_team(organizer ob)
 	super.insert_athlete_to_team(t , *this);
 	ob.show_teams().push_back(t);
 }
+void athlete::insert_team_for_own(team ob)
+{
+	teams.push_back(ob);
+}
+void athlete::delete_team_from_own(team ob)
+{
+	teams.erase(find(teams.begin() , teams.end() , ob));
+}
+vector <team> athlete::show_teams()const
+{
+	return teams;
+}
 void athlete::edit_name(string _name)
 {
 	name = _name;
