@@ -27,7 +27,7 @@ void supervisor::insert_team_to_athlete(athlete ob1 , team ob2)
 {
 	ob1.insert_team_for_own(ob2);
 }
-void supervisor::delete_team_form_athlete(athlete ob1 , team ob2)
+void supervisor::delete_team_from_athlete(athlete ob1 , team ob2)
 {
 	ob1.delete_team_from_own(ob2);
 }
