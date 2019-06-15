@@ -3,7 +3,7 @@ organizer::organizer() : md()
 {
 
 }
-organizer::organizer(mode _md , login _log) : md(_md)
+organizer::organizer(mode _md, login _log) : md(_md)
 {
 	log = _log;
 }
@@ -21,7 +21,10 @@ vector <tournament> organizer::show_tours()
 }
 void organizer::sort_teams()
 {
-	sort(teams.begin(), teams.end(), boolsort);
+	sort(teams.begin(), teams.end(), [](const team a, const team b) -> bool
+	{
+		return (a.show_score() < b.show_score());
+	});
 }
 vector <team> organizer::show_teams()
 {

@@ -1,16 +1,23 @@
 #pragma once
-#include"Header.h"
+#include<iostream>
+#include<vector>
+#include<string>
+#include<algorithm>
+using namespace std;
+#include"team.h"
+#include"datetime.h"
+#include"match.h"
 class tournament
 {
 	string name;
-	const mode md;
+	//const mode md;
 	vector <match> matches;
 	vector <team> teams;
 	datetime startdt;
 	datetime enddt;
 public:
 	tournament();
-	tournament(string _name, mode _md, datetime _startdt, datetime _enddt);
+	tournament(string _name, datetime _startdt, datetime _enddt);
 	void insert_match(match ob); //bad kara asli bara push kardan be vector match haminja boro in match ro ne bazi ha team ham ezafe kon!!
 	void delete_match(match ob); //ein balaie ham yaded nare to khod team pak koni match ro!!
 	void edit_match(match ob, match first);
@@ -26,6 +33,7 @@ public:
 	datetime show_enddt() const;
 	void sort_teams();
 	string show_name()const;
-	mode show_mode()const;
+	//mode show_mode()const;
+	bool operator == (tournament ob)const;
 	~tournament();
 };

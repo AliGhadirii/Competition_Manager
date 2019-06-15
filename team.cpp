@@ -1,9 +1,9 @@
 #include "team.h"
-team::team() : md()
+team::team()
 {
 
 }
-team::team(string _name, mode _md, supervisor _super) : md(_md)
+team::team(string _name, supervisor _super)
 {
 	name = _name;
 	super = _super;
@@ -15,22 +15,22 @@ team::team(string _name, mode _md, supervisor _super) : md(_md)
 	gd = 0;
 	gf = 0;
 }
-void team::insert_match_for_own(match ob)
-{
-	matches.push_back(ob);
-}
-void team::delete_match_for_own(match ob)
-{
-	matches.erase(find(matches.begin(), matches.end(), ob));
-}
-void team::insert_tour_for_own(tournament ob)
-{
-	tournaments.push_back(ob);
-}
-void team::delete_tour_for_own(tournament ob)
-{
-	tournaments.erase(find(tournaments.begin(), tournaments.end(), ob));
-}
+//void team::insert_match_for_own(match ob)
+//{
+//	matches.push_back(ob);
+//}
+//void team::delete_match_for_own(match ob)
+//{
+//	matches.erase(find(matches.begin(), matches.end(), ob));
+//}
+//void team::insert_tour_for_own(tournament ob)
+//{
+//	tournaments.push_back(ob);
+//}
+//void team::delete_tour_for_own(tournament ob)
+//{
+//	tournaments.erase(find(tournaments.begin(), tournaments.end(), ob));
+//}
 string team::show_name()const
 {
 	return name;
@@ -43,14 +43,14 @@ vector <athlete> team::show_athletes()const
 {
 	return athletes;
 }
-vector <match> team::show_matches()const
-{
-	return matches;
-}
-vector <tournament> team::show_toures()const
-{
-	return tournaments;
-}
+//vector <match> team::show_matches()const
+//{
+//	return matches;
+//}
+//vector <tournament> team::show_toures()const
+//{
+//	return tournaments;
+//}
 int team::show_score()const
 {
 	return score;
@@ -114,10 +114,17 @@ supervisor team::show_suoer()const
 void team::edit_super(supervisor ob){
 	super = ob;
 }
-mode team::show_mode()const
+//mode team::show_mode()const
+//{
+//	return md;
+//}
+bool team::operator == (team ob)const
 {
-	return md;
+	if (name == ob.show_name())
+		return 1;
+	return 0;
 }
+
 team::~team()
 {
 

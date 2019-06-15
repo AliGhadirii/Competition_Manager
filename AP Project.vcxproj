@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{5161D7A9-CFDB-421C-BFAE-6CA410D5B51A}</ProjectGuid>
+    <ProjectGuid>{E1193252-234F-4B46-ACE6-FAC256B542F7}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>APProject</RootNamespace>
   </PropertyGroup>
@@ -78,7 +78,6 @@
   <ItemGroup>
     <ClInclude Include="athlete.h" />
     <ClInclude Include="datetime.h" />
-    <ClInclude Include="Header.h" />
     <ClInclude Include="login.h" />
     <ClInclude Include="match.h" />
     <ClInclude Include="organizer.h" />

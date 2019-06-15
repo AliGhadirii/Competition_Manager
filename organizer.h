@@ -1,5 +1,18 @@
 #pragma once
-#include"Header.h"
+enum mode
+{
+	football, pingpong, badminton
+};
+#include<iostream>
+#include<vector>
+#include<algorithm>
+#include<string>
+using namespace std;
+#include"tournament.h"
+#include"team.h"
+#include"athlete.h"
+#include"supervisor.h"
+#include"login.h"
 class organizer
 {
 	vector <tournament> tournaments;
@@ -10,7 +23,7 @@ class organizer
 	const mode md;
 public:
 	organizer();
-	organizer(mode _md , login _log);
+	organizer(mode _md, login _log);
 	void insert_tour(tournament ob);
 	void delete_tour(tournament ob);
 	vector <tournament> show_tours();
