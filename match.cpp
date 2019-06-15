@@ -1,9 +1,9 @@
 #include "match.h"
-match::match() : md()
+match::match()
 {
 
 }
-match::match(team _team1, team _team2, datetime _startdt, datetime _enddt, mode _md) : md(_md)
+match::match(team _team1, team _team2, datetime _startdt, datetime _enddt)
 {
 	team1 = _team1;
 	team2 = _team2;
@@ -56,9 +56,15 @@ int match::show_score2()const
 {
 	return score2;
 }
-mode match::show_mode()const
+//mode match::show_mode()const
+//{
+//	return md;
+//}
+bool match::operator == (match ob)const
 {
-	return md;
+	if (team1 == ob.show_team1() && team2 == ob.show_team2() && startdt == ob.show_startdt() && enddt == ob.show_enddt())
+		return 1;
+	return 0;
 }
 match::~match()
 {

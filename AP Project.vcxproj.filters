@@ -15,8 +15,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Header.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="organizer.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="tournament.h">
       <Filter>Header Files</Filter>
@@ -33,9 +33,6 @@
     <ClInclude Include="supervisor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="organizer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="login.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -44,6 +41,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="organizer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -60,9 +60,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="supervisor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="organizer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="login.cpp">

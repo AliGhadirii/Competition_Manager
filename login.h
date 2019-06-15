@@ -1,5 +1,9 @@
 #pragma once
-#include"Header.h"
+#include<iostream>
+#include<vector>
+#include<string>
+#include<algorithm>
+using namespace std;
 class login
 {
 	string username, password;

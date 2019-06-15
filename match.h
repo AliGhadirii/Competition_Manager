@@ -1,5 +1,11 @@
 #pragma once
-#include"Header.h"
+#include<iostream>
+#include<vector>
+#include<string>
+#include<algorithm>
+using namespace std;
+#include"datetime.h"
+#include"team.h"
 class match
 {
 	team team1, team2;
@@ -7,10 +13,10 @@ class match
 	datetime enddt;
 	int score1, score2;
 	int status;
-	const mode md;
+	//const mode md;
 public:
 	match();
-	match(team _team1, team _team2, datetime _startdt, datetime _enddt, mode _md);//status ro -1 kon
+	match(team _team1, team _team2, datetime _startdt, datetime _enddt);//status ro -1 kon
 	void edit_status(int _status);
 	void edit_scores(int _score1, int _score2);
 	void edit_startdt(datetime _startdt);
@@ -22,6 +28,7 @@ public:
 	int show_status()const;
 	int show_score1()const;
 	int show_score2()const;
-	mode show_mode()const;
+	bool operator == (match ob)const;
+	//mode show_mode()const;
 	~match();
 };

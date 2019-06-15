@@ -112,3 +112,9 @@ void datetime::getNewTimeDate()
 	tdNow[4] = now->tm_min;
 	tdNow[5] = now->tm_sec;
 }
+bool datetime::operator == (datetime ob)const
+{
+	if (td == ob.show_datetime())
+		return 1;
+	return 0;
+}

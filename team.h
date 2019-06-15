@@ -1,28 +1,34 @@
 #pragma once
-#include"Header.h"
+#include<iostream>
+#include<vector>
+#include<string>
+#include<algorithm>
+using namespace std;
+#include"supervisor.h"
+#include"athlete.h"
 class team
 {
 	string name;
 	vector <athlete> athletes;
-	vector <match> matches;
-	vector <tournament> tournaments;
+	//vector <match> matches;
+	//vector <tournament> tournaments;
 	int score, win, draw, loss, gf, ga, gd;
 	supervisor super;
-	const mode md;
+	//const mode md;
 public:
 	team();
-	team(string _name, mode _md, supervisor _super);// set gf,... yadad nare!
-	void insert_match_for_own(match ob);
-	void delete_match_for_own(match ob);
-	void insert_tour_for_own(tournament ob);
-	void delete_tour_for_own(tournament ob);
+	team(string _name,  supervisor _super);// set gf,... yadad nare!
+	//void insert_match_for_own(match ob);
+	//void delete_match_for_own(match ob);
+	//void insert_tour_for_own(tournament ob);
+	//void delete_tour_for_own(tournament ob);
 	//friend void insert_athlete_to_team(athlete ob);
 	//friend void delete_athlete_from_team(athlete ob);
 	string show_name()const;
 	void edit_name(string _name);
 	vector <athlete> show_athletes()const;
-	vector <match> show_matches()const;
-	vector <tournament> show_toures()const;
+	//vector <match> show_matches()const;
+	//vector <tournament> show_toures()const;
 	int show_score()const;
 	int show_win()const;
 	int show_draw()const;
@@ -39,6 +45,7 @@ public:
 	void edit_gd(int _gd);
 	supervisor show_suoer()const;
 	void edit_super(supervisor ob);
-	mode show_mode()const;
+	//mode show_mode()const;
+	bool operator == (team ob)const;
 	~team();
 };

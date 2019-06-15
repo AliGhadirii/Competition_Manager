@@ -1,9 +1,9 @@
 #include "tournament.h"
-tournament::tournament() : md()
+tournament::tournament()
 {
 
 }
-tournament::tournament(string _name, mode _md, datetime _startdt, datetime _enddt) : md(_md)
+tournament::tournament(string _name, datetime _startdt, datetime _enddt)
 {
 	name = _name;
 	startdt = _startdt;
@@ -12,14 +12,14 @@ tournament::tournament(string _name, mode _md, datetime _startdt, datetime _endd
 void tournament::insert_match(match ob)
 {
 	matches.push_back(ob);
-	ob.show_team1().insert_match_for_own(ob);
-	ob.show_team2().insert_match_for_own(ob);
+	//ob.show_team1().insert_match_for_own(ob);
+	//ob.show_team2().insert_match_for_own(ob);
 }
 void tournament::delete_match(match ob)
 {
 	matches.erase(find(matches.begin(), matches.end(), ob));
-	ob.show_team1().delete_match_for_own(ob);
-	ob.show_team2().delete_match_for_own(ob);
+	//ob.show_team1().delete_match_for_own(ob);
+	//ob.show_team2().delete_match_for_own(ob);
 }
 void tournament::edit_match(match first, match ob)
 {
@@ -28,18 +28,18 @@ void tournament::edit_match(match first, match ob)
 void tournament::insert_team(team ob)
 {
 	teams.push_back(ob);
-	ob.insert_tour_for_own(*this);
+	//ob.insert_tour_for_own(*this);
 }
 void tournament::delete_team(team ob)
 {
 	teams.erase(find(teams.begin(), teams.end(), ob));
-	ob.delete_tour_for_own(*this);
+	//ob.delete_tour_for_own(*this);
 }
 void tournament::edit_team(team first, team ob)
 {
 	replace(teams.begin(), teams.end(), first, ob);
-	first.delete_tour_for_own(*this);
-	ob.insert_tour_for_own(*this);
+	//first.delete_tour_for_own(*this);
+	//ob.insert_tour_for_own(*this);
 }
 void tournament::edit_startdt(datetime ob)
 {
@@ -72,15 +72,24 @@ datetime tournament::show_enddt() const
 }
 void tournament::sort_teams()
 {
-	sort(teams.begin(), teams.end(), boolsort);
+	sort(teams.begin(), teams.end(), [](const team a, const team b) -> bool
+	{
+		return (a.show_score() < b.show_score());
+	});
 }
 string tournament::show_name()const
 {
 	return name;
 }
-mode tournament::show_mode()const
+//mode tournament::show_mode()const
+//{
+//	return md;
+//}
+bool tournament::operator == (tournament ob) const
 {
-	return md;
+	if (name == ob.show_name())
+		return 1;
+	return 0;
 }
 tournament::~tournament()
 {
