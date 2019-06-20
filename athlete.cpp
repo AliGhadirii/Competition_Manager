@@ -5,8 +5,8 @@ athlete::athlete()
 }
 athlete::athlete(string _name, login _log)
 {
-	name = _name;
-	log = _log;
+    name = _name;
+    log = _log;
 }
 //void athlete::insert_athlete(organizer ob)
 //{
@@ -40,20 +40,26 @@ athlete::athlete(string _name, login _log)
 //}
 void athlete::edit_name(string _name)
 {
-	name = _name;
+    name = _name;
 }
-login athlete::show_login()const
+login athlete::show_login()
 {
-	return log;
+    return log;
 }
-string athlete::show_name() const
+string athlete::show_name()
 {
-	return name;
+    return name;
 }
 //mode athlete::show_mode() const
 //{
 //	return md;
 //}
+bool athlete::operator == (athlete ob)
+{
+    if(name == ob.name)
+        return 1 ;
+    return 0;
+}
 athlete::~athlete()
 {
 

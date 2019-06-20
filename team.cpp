@@ -3,17 +3,17 @@ team::team()
 {
 
 }
-team::team(string _name, supervisor _super)
+team::team(string _name, supervisor _super , int _score = 0 , int _win = 0 , int _draw = 0 , int _loss = 0 , int _gf = 0 , int _ga = 0 , int _gd = 0)
 {
-	name = _name;
-	super = _super;
-	score = 0;
-	win = 0;
-	loss = 0;
-	draw = 0;
-	ga = 0;
-	gd = 0;
-	gf = 0;
+    name = _name;
+    super = _super;
+    score = _score;
+    win = _win;
+    loss = _loss;
+    draw = _draw;
+    ga = _ga;
+    gd = _gd;
+    gf = _gf;
 }
 //void team::insert_match_for_own(match ob)
 //{
@@ -31,17 +31,25 @@ team::team(string _name, supervisor _super)
 //{
 //	tournaments.erase(find(tournaments.begin(), tournaments.end(), ob));
 //}
-string team::show_name()const
+void team::insert_athlete(athlete ob)
 {
-	return name;
+    athletes.push_back(ob);
+}
+void team::delete_athlete(athlete ob)
+{
+    athletes.erase(find(athletes.begin() , athletes.end() , ob));
+}
+string team::show_name()
+{
+    return name;
 }
 void team::edit_name(string _name)
 {
-	name = _name;
+    name = _name;
 }
-vector <athlete> team::show_athletes()const
+vector <athlete> team::show_athletes()
 {
-	return athletes;
+    return athletes;
 }
 //vector <match> team::show_matches()const
 //{
@@ -51,78 +59,78 @@ vector <athlete> team::show_athletes()const
 //{
 //	return tournaments;
 //}
-int team::show_score()const
+int team::show_score()
 {
-	return score;
+    return score;
 }
-int team::show_win()const
+int team::show_win()
 {
-	return win;
+    return win;
 }
-int team::show_draw()const
+int team::show_draw()
 {
-	return draw;
+    return draw;
 }
-int team::show_loss()const
+int team::show_loss()
 {
-	return loss;
+    return loss;
 }
-int team::show_gf()const
+int team::show_gf()
 {
-	return gf;
+    return gf;
 }
-int team::show_ga()const
+int team::show_ga()
 {
-	return ga;
+    return ga;
 }
-int team::show_gd()const
+int team::show_gd()
 {
-	return gd;
+    return gd;
 }
 void team::edit_score(int _score)
 {
-	score = _score;
+    score += _score;
 }
-void team::edit_win(int _win)
+void team::edit_win()
 {
-	win = _win;
+    win++;
 }
-void team::edit_draw(int _draw)
+void team::edit_draw()
 {
-	draw = _draw;
+    draw++;
 }
-void team::edit_loss(int _loss)
+void team::edit_loss()
 {
-	loss = _loss;
+    loss++;
 }
 void team::edit_gf(int _gf)
 {
-	gf = _gf;
+    gf += _gf;
 }
 void team::edit_ga(int _ga)
 {
-	ga = _ga;
+    ga += _ga;
 }
-void team::edit_gd(int _gd)
+void team::edit_gd()
 {
-	gd = _gd;
+    gd = gf - ga ;
 }
-supervisor team::show_suoer()const
+supervisor team::show_super()
 {
-	return super;
+    return super;
 }
 void team::edit_super(supervisor ob){
-	super = ob;
+    super = ob;
 }
 //mode team::show_mode()const
 //{
 //	return md;
 //}
-bool team::operator == (team ob)const
+bool team::operator == (team ob)
 {
-	if (name == ob.show_name())
-		return 1;
-	return 0;
+    if (name == ob.show_name())
+        return 1;
+    return 0;
 }
 
 team::~team()
