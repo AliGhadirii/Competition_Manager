@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>edit_personal_info</class>
+ <widget class="QDialog" name="edit_personal_info">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Edit Personal Information</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/*background-color:rgb(230, 248, 255);*/
+</string>
+  </property>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>50</y>
+     <width>135</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLineEdit" name="name_input"/>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="username_input"/>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="password_input"/>
+    </item>
+    <item>
+     <widget class="QPushButton" name="submit_button">
+      <property name="text">
+       <string>Submit</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>60</y>
+     <width>58</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QLabel" name="name_lable">
+      <property name="text">
+       <string>Name :</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="username_lable">
+      <property name="text">
+       <string>username :</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="password_lable">
+      <property name="text">
+       <string>password  :</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
